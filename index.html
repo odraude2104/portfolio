@@ -3,23 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Meu Portfólio</title>
-  <!-- Bootstrap 5 com tema escuro -->
+  <title>Eduardo</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body data-bs-theme="dark">
 
-  <!-- Navbar -->
   <nav class="navbar navbar-expand-lg bg-dark border-bottom border-secondary mb-4">
     <div class="container">
-      <a class="navbar-brand text-light" href="#">Seu Nome</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
+      <a class="navbar-brand text-light" href="#" id="nome"></a>
+      <div class="collapse navbar-collapse">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link text-light" href="#sobre">Sobre</a></li>
+          <li class="nav-item"><a class="nav-link text-light" href="#habilidades">Habilidades</a></li>
+          <li class="nav-item"><a class="nav-link text-light" href="#servicos">Serviços</a></li>
           <li class="nav-item"><a class="nav-link text-light" href="#projetos">Projetos</a></li>
+          <li class="nav-item"><a class="nav-link text-light" href="#blog">Blog</a></li>
           <li class="nav-item"><a class="nav-link text-light" href="#contato">Contato</a></li>
         </ul>
       </div>
@@ -28,56 +26,110 @@
 
   <main class="container">
 
-    <!-- Sobre Mim -->
     <section id="sobre" class="mb-5">
       <h2>Sobre Mim</h2>
-      <p>Sou um desenvolvedor web apaixonado por criar soluções práticas e eficientes.</p>
+      <p id="sobre-texto"></p>
     </section>
 
-    <!-- Projetos -->
+    <section id="habilidades" class="mb-5">
+      <h2>Habilidades</h2>
+      <ul id="lista-habilidades" class="list-inline"></ul>
+    </section>
+
+    <section id="servicos" class="mb-5">
+      <h2>Serviços</h2>
+      <div id="lista-servicos" class="row g-4"></div>
+    </section>
+
     <section id="projetos" class="mb-5">
-      <h2>Meus Projetos</h2>
-      <div class="row row-cols-1 row-cols-md-2 g-4">
-        <div class="col">
-          <div class="card bg-secondary text-light">
-            <div class="card-body">
-              <h5 class="card-title">Projeto 1</h5>
-              <p class="card-text">Descrição breve do projeto.</p>
-              <a href="#" class="btn btn-outline-light btn-sm">Ver mais</a>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card bg-secondary text-light">
-            <div class="card-body">
-              <h5 class="card-title">Projeto 2</h5>
-              <p class="card-text">Descrição breve do projeto.</p>
-              <a href="#" class="btn btn-outline-light btn-sm">Ver mais</a>
-            </div>
-          </div>
-        </div>
-      </div>
+      <h2>Projetos</h2>
+      <div id="lista-projetos" class="row g-4"></div>
     </section>
 
-    <!-- Contato -->
+    <section id="blog" class="mb-5">
+      <h2>Blog</h2>
+      <ul id="lista-blog"></ul>
+    </section>
+
     <section id="contato" class="mb-5">
       <h2>Contato</h2>
-      <p>Você pode me encontrar em:</p>
-      <ul>
-        <li>Email: <a href="mailto:seuemail@example.com">seuemail@example.com</a></li>
-        <li>GitHub: <a href="https://github.com/seuusuario" target="_blank">github.com/seuusuario</a></li>
-        <li>LinkedIn: <a href="https://linkedin.com/in/seuusuario" target="_blank">linkedin.com/in/seuusuario</a></li>
-      </ul>
+      <ul id="contato-info"></ul>
     </section>
 
   </main>
 
-  <!-- Rodapé -->
   <footer class="bg-dark text-center text-light py-3 border-top border-secondary">
-    <p class="mb-0">&copy; 2025 Seu Nome. Todos os direitos reservados.</p>
+    <p>&copy; 2025 <span id="nome-footer"></span>. Todos os direitos reservados.</p>
   </footer>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- JS para carregar o JSON -->
+  <script>
+    fetch('dados.json')
+      .then(response => response.json())
+      .then(dados => {
+        // Nome
+        document.getElementById('nome').textContent = dados.nome;
+        document.getElementById('nome-footer').textContent = dados.nome;
+
+        // Sobre
+        document.getElementById('sobre-texto').textContent = dados.sobre;
+
+        // Habilidades
+        const habilidades = document.getElementById('lista-habilidades');
+        dados.habilidades.forEach(hab => {
+          const li = document.createElement('li');
+          li.className = 'list-inline-item badge bg-secondary me-2 mb-2';
+          li.textContent = hab;
+          habilidades.appendChild(li);
+        });
+
+        // Serviços
+        const servicos = document.getElementById('lista-servicos');
+        dados.servicos.forEach(servico => {
+          servicos.innerHTML += `
+            <div class="col-md-6">
+              <div class="card bg-secondary text-light">
+                <div class="card-body">
+                  <h5 class="card-title">${servico.titulo}</h5>
+                  <p class="card-text">${servico.descricao}</p>
+                </div>
+              </div>
+            </div>`;
+        });
+
+        // Projetos
+        const projetos = document.getElementById('lista-projetos');
+        dados.projetos.forEach(proj => {
+          projetos.innerHTML += `
+            <div class="col-md-6">
+              <div class="card bg-secondary text-light">
+                <div class="card-body">
+                  <h5 class="card-title">${proj.titulo}</h5>
+                  <p class="card-text">${proj.descricao}</p>
+                  <a href="${proj.link}" class="btn btn-outline-light btn-sm">Ver mais</a>
+                </div>
+              </div>
+            </div>`;
+        });
+
+        // Blog
+        const blog = document.getElementById('lista-blog');
+        dados.blog.forEach(post => {
+          const li = document.createElement('li');
+          li.innerHTML = `<a href="${post.link}" target="_blank">${post.titulo}</a>`;
+          blog.appendChild(li);
+        });
+
+        // Contato
+        const contato = document.getElementById('contato-info');
+        contato.innerHTML = `
+          <li>Email: <a href="mailto:${dados.contato.email}">${dados.contato.email}</a></li>
+          <li>GitHub: <a href="${dados.contato.github}" target="_blank">${dados.contato.github}</a></li>
+          <li>LinkedIn: <a href="${dados.contato.linkedin}" target="_blank">${dados.contato.linkedin}</a></li>
+        `;
+      })
+      .catch(error => console.error('Erro ao carregar os dados:', error));
+  </script>
+
 </body>
 </html>
