@@ -1,7 +1,7 @@
 {
-  "nome": "Seu Nome",
-  "sobre": "Sou um desenvolvedor web apaixonado por criar soluções práticas e eficientes.",
-  "habilidades": ["HTML", "CSS", "JavaScript", "Bootstrap", "Git", "React"],
+  "nome": "Eduardo",
+  "sobre": "Sou um analista de Infraestrutua de TI apaixonado por criar soluções práticas e eficientes.",
+  "habilidades": ["HTML", "CSS", "JavaScript", "Bootstrap", "Git", "React", "Zabbix"],
   "servicos": [
     { "titulo": "Desenvolvimento Web", "descricao": "Sites modernos e responsivos." },
     { "titulo": "Manutenção", "descricao": "Ajustes, correções e melhorias." }
