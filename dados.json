@@ -1,0 +1,22 @@
+{
+  "nome": "Seu Nome",
+  "sobre": "Sou um desenvolvedor web apaixonado por criar soluções práticas e eficientes.",
+  "habilidades": ["HTML", "CSS", "JavaScript", "Bootstrap", "Git", "React"],
+  "servicos": [
+    { "titulo": "Desenvolvimento Web", "descricao": "Sites modernos e responsivos." },
+    { "titulo": "Manutenção", "descricao": "Ajustes, correções e melhorias." }
+  ],
+  "projetos": [
+    { "titulo": "Projeto 1", "descricao": "Breve descrição do projeto 1.", "link": "#" },
+    { "titulo": "Projeto 2", "descricao": "Breve descrição do projeto 2.", "link": "#" }
+  ],
+  "contato": {
+    "email": "seuemail@example.com",
+    "github": "https://github.com/seuusuario",
+    "linkedin": "https://linkedin.com/in/seuusuario"
+  },
+  "blog": [
+    { "titulo": "Como aprendi JavaScript", "link": "#" },
+    { "titulo": "Dicas de produtividade para devs", "link": "#" }
+  ]
+}
