@@ -4,49 +4,80 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Meu Portfólio</title>
-  <link rel="stylesheet" href="style.css" />
+  <!-- Bootstrap 5 com tema escuro -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
-  <header>
-    <h1>Seu Nome</h1>
-    <nav>
+<body data-bs-theme="dark">
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-dark border-bottom border-secondary mb-4">
+    <div class="container">
+      <a class="navbar-brand text-light" href="#">Seu Nome</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link text-light" href="#sobre">Sobre</a></li>
+          <li class="nav-item"><a class="nav-link text-light" href="#projetos">Projetos</a></li>
+          <li class="nav-item"><a class="nav-link text-light" href="#contato">Contato</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+
+    <!-- Sobre Mim -->
+    <section id="sobre" class="mb-5">
+      <h2>Sobre Mim</h2>
+      <p>Sou um desenvolvedor web apaixonado por criar soluções práticas e eficientes.</p>
+    </section>
+
+    <!-- Projetos -->
+    <section id="projetos" class="mb-5">
+      <h2>Meus Projetos</h2>
+      <div class="row row-cols-1 row-cols-md-2 g-4">
+        <div class="col">
+          <div class="card bg-secondary text-light">
+            <div class="card-body">
+              <h5 class="card-title">Projeto 1</h5>
+              <p class="card-text">Descrição breve do projeto.</p>
+              <a href="#" class="btn btn-outline-light btn-sm">Ver mais</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card bg-secondary text-light">
+            <div class="card-body">
+              <h5 class="card-title">Projeto 2</h5>
+              <p class="card-text">Descrição breve do projeto.</p>
+              <a href="#" class="btn btn-outline-light btn-sm">Ver mais</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="mb-5">
+      <h2>Contato</h2>
+      <p>Você pode me encontrar em:</p>
       <ul>
-        <li><a href="#sobre">Sobre</a></li>
-        <li><a href="#projetos">Projetos</a></li>
-        <li><a href="#contato">Contato</a></li>
+        <li>Email: <a href="mailto:seuemail@example.com">seuemail@example.com</a></li>
+        <li>GitHub: <a href="https://github.com/seuusuario" target="_blank">github.com/seuusuario</a></li>
+        <li>LinkedIn: <a href="https://linkedin.com/in/seuusuario" target="_blank">linkedin.com/in/seuusuario</a></li>
       </ul>
-    </nav>
-  </header>
+    </section>
 
-  <section id="sobre">
-    <h2>Sobre Mim</h2>
-    <p>Sou um desenvolvedor web apaixonado por criar soluções práticas e eficientes.</p>
-  </section>
+  </main>
 
-  <section id="projetos">
-    <h2>Meus Projetos</h2>
-    <div class="projeto">
-      <h3>Projeto 1</h3>
-      <p>Descrição breve do projeto. <a href="#">Ver mais</a></p>
-    </div>
-    <div class="projeto">
-      <h3>Projeto 2</h3>
-      <p>Descrição breve do projeto. <a href="#">Ver mais</a></p>
-    </div>
-  </section>
-
-  <section id="contato">
-    <h2>Contato</h2>
-    <p>Você pode me encontrar em:</p>
-    <ul>
-      <li>Email: <a href="mailto:seuemail@example.com">seuemail@example.com</a></li>
-      <li>GitHub: <a href="https://github.com/seuusuario" target="_blank">github.com/seuusuario</a></li>
-      <li>LinkedIn: <a href="https://linkedin.com/in/seuusuario" target="_blank">linkedin.com/in/seuusuario</a></li>
-    </ul>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Seu Nome. Todos os direitos reservados.</p>
+  <!-- Rodapé -->
+  <footer class="bg-dark text-center text-light py-3 border-top border-secondary">
+    <p class="mb-0">&copy; 2025 Seu Nome. Todos os direitos reservados.</p>
   </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
