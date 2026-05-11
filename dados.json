@@ -1,7 +1,7 @@
 {
   "nome": "Eduardo",
   "sobre": "Sou um analista de Infraestrutua de TI apaixonado por criar soluções práticas e eficientes.",
-  "habilidades": ["HTML", "CSS", "JavaScript", "Bootstrap", "Git", "Zabbix", "Grafana", "Docker", "Container", "Virtualização", "Hyper-V", "Servidores", "Windows", "Windows Server", "Windows 10", "Windows 11", "DevOps", "Cibersegurança", "PHP", "MySQL", "Banco de Dados", "Modelagem de Dados"],
+  "habilidades": ["HTML", "CSS", "JavaScript", "Bootstrap", "Git", "Zabbix", "Grafana", "Docker", "Container", "Portainer", "Virtualização", "Hyper-V", "Servidores", "Windows", "Windows Server", "Windows 10", "Windows 11", "DevOps", "Cibersegurança", "PHP", "MySQL", "Banco de Dados", "Modelagem de Dados"],
   "servicos": [
     { "titulo": "Desenvolvimento Web", "descricao": "Sites modernos e responsivos." },
     { "titulo": "Manutenção", "descricao": "Ajustes, correções e melhorias." }
@@ -11,7 +11,7 @@
     { "titulo": "Projeto 2", "descricao": "Breve descrição do projeto 2.", "link": "#" }
   ],
   "contato": {
-    "email": "seuemail@example.com",
+    "email": "eduardo.arraes@outlook.com",
     "github": "https://github.com/seuusuario",
     "linkedin": "https://linkedin.com/in/seuusuario"
   },
