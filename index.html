@@ -3,186 +3,155 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Eduardo Arraes | Terminal</title>
+  <title>Eduardo Arraes</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;700&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg-dark: #0a0c10;
-      --sidebar-bg: #111418;
-      --accent: #00d4ff;
-      --card-bg: #161b22;
-    }
-
     body {
-      background-color: var(--bg-dark);
-      color: #c9d1d9;
-      font-family: 'Inter', sans-serif;
-      overflow-x: hidden;
+      background-color: #000000;
+      color: #ffffff;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      padding-top: 80px;
     }
 
-    code, .mono { font-family: 'Fira Code', monospace; }
-
-    /* Sidebar Customizada */
-    .sidebar {
-      background-color: var(--sidebar-bg);
-      border-right: 1px solid #30363d;
-      min-height: 100vh;
-      position: fixed;
-      width: 280px;
-      z-index: 1000;
+    /* Navbar Minimalista */
+    .navbar {
+      background-color: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(10px);
     }
 
-    .nav-pills .nav-link {
-      color: #8b949e;
-      border-radius: 8px;
-      margin-bottom: 5px;
-      transition: 0.3s;
+    /* Botão Branco Redondo */
+    .btn-white {
+      background-color: #ffffff;
+      color: #000000;
+      border-radius: 50px;
+      padding: 10px 25px;
+      font-weight: 700;
+      border: none;
+      transition: transform 0.2s ease;
+    }
+    .btn-white:hover {
+      background-color: #e2e2e2;
+      transform: scale(1.05);
     }
 
-    .nav-pills .nav-link.active, .nav-pills .nav-link:hover {
-      background-color: rgba(0, 212, 255, 0.1) !important;
-      color: var(--accent) !important;
-    }
-
-    /* Conteúdo Principal */
-    .main-content {
-      margin-left: 280px;
+    /* Cards e Seções */
+    .section-card {
+      background-color: #111111;
+      border-radius: 30px;
       padding: 40px;
+      margin-bottom: 30px;
+      border: 1px solid #222222;
     }
 
-    .glass-card {
-      background: var(--card-bg);
-      border: 1px solid #30363d;
-      border-radius: 12px;
-      padding: 2rem;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    .badge-pill {
+      background-color: #ffffff;
+      color: #000000;
+      border-radius: 50px;
+      padding: 8px 20px;
+      font-weight: 600;
+      text-transform: lowercase;
+      margin: 5px;
+      display: inline-block;
     }
 
-    .badge-skill {
-      background: #21262d;
-      color: var(--accent);
-      border: 1px solid rgba(0, 212, 255, 0.3);
-      padding: 8px 15px;
-      font-size: 0.85rem;
+    h1, h2 {
+      font-weight: 700;
+      letter-spacing: -1px;
     }
 
-    .project-card {
-      transition: all 0.3s ease;
-      height: 100%;
-      border-left: 4px solid transparent;
+    .nav-link {
+      color: #888888 !important;
+      font-weight: 500;
+    }
+    .nav-link:hover {
+      color: #ffffff !important;
     }
 
-    .project-card:hover {
-      border-left: 4px solid var(--accent);
-      background: #1c2128;
-    }
-
-    /* Ajustes Mobile */
-    @media (max-width: 992px) {
-      .sidebar { width: 100%; min-height: auto; position: relative; border-right: none; border-bottom: 1px solid #30363d; }
-      .main-content { margin-left: 0; padding: 20px; }
-    }
+    /* Remover decorações de links */
+    a { text-decoration: none; }
   </style>
 </head>
-<body data-bs-theme="dark">
+<body>
 
-  <!-- Sidebar -->
-  <aside class="sidebar p-4 collapse d-lg-block" id="sidebarMenu">
-    <div class="mb-5 text-center">
-      <h4 class="fw-bold mb-0 text-white mono" id="nome"></h4>
-      <small class="text-primary mono">SysAdmin & DevOps</small>
+  <!-- Navegação -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand text-white fw-bold fs-4" href="#" id="nome"></a>
+      <div class="ms-auto">
+        <a class="btn-white shadow-sm" href="#contato">contato</a>
+      </div>
     </div>
-    
-    <nav class="nav flex-column nav-pills">
-      <a class="nav-link active" href="#home">/home</a>
-      <a class="nav-link" href="#sobre">/sobre</a>
-      <a class="nav-link" href="#habilidades">/habilidades</a>
-      <a class="nav-link" href="#projetos">/projetos</a>
-      <a class="nav-link" href="#blog">/blog</a>
-      <a class="nav-link mt-4 btn btn-outline-primary" href="#contato">Falar Comigo</a>
-    </nav>
-  </aside>
+  </nav>
 
-  <!-- Botão Mobile -->
-  <button class="btn btn-dark d-lg-none fixed-top m-2 border-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu">
-    ☰ Menu
-  </button>
+  <main class="container mt-5" style="max-width: 850px;">
 
-  <!-- Main Content -->
-  <main class="main-content">
-    
-    <!-- Hero / Home -->
-    <section id="home" class="mb-5">
-      <div class="glass-card">
-        <span class="mono text-primary mb-2 d-block">> Initializing system...</span>
-        <h1 class="display-4 fw-black text-white mb-4">Especialista em <br> <span style="color: var(--accent)">Infraestrutura Crítica.</span></h1>
-        <p class="lead text-secondary">Focado em alta disponibilidade, segurança de endpoints e automação inteligente.</p>
+    <!-- Hero -->
+    <section id="home" class="text-center py-5">
+      <h1 class="display-3 mb-4">Criando experiências através do design e código.</h1>
+      <p class="lead text-secondary mb-5">Analista de TI e desenvolvedor focado em simplicidade e eficiência.</p>
+      <div class="d-flex justify-content-center gap-3">
+        <a href="#projetos" class="btn-white">ver projetos</a>
+        <a href="#sobre" class="btn btn-outline-light rounded-pill px-4">sobre mim</a>
       </div>
     </section>
 
     <!-- Sobre -->
-    <section id="sobre" class="mb-5">
-      <h3 class="mono mb-4 text-white"># sobre_mim</h3>
-      <div class="glass-card">
-        <p id="sobre-texto" class="fs-5 lh-lg mb-0"></p>
-      </div>
+    <section id="sobre" class="section-card">
+      <h2 class="mb-4">sobre</h2>
+      <p id="sobre-texto" class="text-secondary fs-5 lh-base"></p>
     </section>
 
     <!-- Habilidades -->
-    <section id="habilidades" class="mb-5">
-      <h3 class="mono mb-4 text-white"># tech_stack</h3>
-      <div id="lista-habilidades" class="d-flex flex-wrap gap-2"></div>
+    <section id="habilidades" class="mb-5 text-center">
+      <div id="lista-habilidades"></div>
     </section>
 
     <!-- Projetos -->
     <section id="projetos" class="mb-5">
-      <h3 class="mono mb-4 text-white"># repositorios</h3>
+      <h2 class="mb-4">projetos</h2>
       <div id="lista-projetos" class="row g-4"></div>
     </section>
 
-    <!-- Blog e Contato -->
-    <div class="row g-4">
-      <div class="col-md-7">
-        <section id="blog">
-          <h3 class="mono mb-4 text-white"># logs_recente</h3>
-          <div id="lista-blog" class="glass-card p-0 overflow-hidden"></div>
-        </section>
-      </div>
-      <div class="col-md-5">
-        <section id="contato">
-          <h3 class="mono mb-4 text-white"># connect</h3>
-          <div class="glass-card" id="contato-info"></div>
-        </section>
-      </div>
-    </div>
+    <!-- Blog -->
+    <section id="blog" class="section-card">
+      <h2 class="mb-4">blog</h2>
+      <div id="lista-blog" class="list-group list-group-flush"></div>
+    </section>
 
-    <footer class="mt-5 pt-5 text-center text-secondary border-top border-secondary">
-      <p class="small mono">&copy; 2026.root@<span id="nome-footer"></span> ~ system_up</p>
-    </footer>
+    <!-- Contato -->
+    <section id="contato" class="text-center py-5">
+      <h2 class="mb-4">vamos conversar?</h2>
+      <div id="contato-info" class="d-flex justify-content-center gap-4 flex-wrap"></div>
+    </section>
+
   </main>
+
+  <footer class="py-5 text-center text-secondary border-top border-secondary mt-5">
+    <p>© 2026 <span id="nome-footer"></span></p>
+  </footer>
 
   <script>
     fetch('dados.json')
       .then(response => response.json())
       .then(dados => {
-        document.getElementById('nome').textContent = dados.nome;
+        document.getElementById('nome').textContent = dados.nome.toLowerCase();
         document.getElementById('nome-footer').textContent = dados.nome;
         document.getElementById('sobre-texto').textContent = dados.sobre;
 
         const hab = document.getElementById('lista-habilidades');
         dados.habilidades.forEach(h => {
-          hab.innerHTML += `<span class="badge badge-skill rounded-0">${h}</span>`;
+          hab.innerHTML += `<span class="badge-pill">${h}</span>`;
         });
 
         const proj = document.getElementById('lista-projetos');
         dados.projetos.forEach(p => {
           proj.innerHTML += `
-            <div class="col-md-6">
-              <div class="glass-card project-card">
-                <h5 class="mono text-white mb-3">${p.titulo}</h5>
-                <p class="small text-secondary mb-4">${p.descricao}</p>
-                <a href="${p.link}" class="btn btn-sm btn-outline-secondary mono" target="_blank">view_source</a>
+            <div class="col-12">
+              <div class="section-card mb-0 h-100">
+                <h4 class="text-white fw-bold">${p.titulo}</h4>
+                <p class="text-secondary">${p.descricao}</p>
+                <a href="${p.link}" target="_blank" class="text-white fw-bold small">explorar projeto ↗</a>
               </div>
             </div>`;
         });
@@ -190,22 +159,17 @@
         const blog = document.getElementById('lista-blog');
         dados.blog.forEach(post => {
           blog.innerHTML += `
-            <a href="${post.link}" class="d-block p-3 text-decoration-none border-bottom border-secondary text-secondary hover-bg-dark">
-              <span class="text-primary mono">-></span> ${post.titulo}
+            <a href="${post.link}" class="list-group-item bg-transparent text-secondary border-secondary py-3 px-0 d-flex justify-content-between align-items-center" target="_blank">
+              ${post.titulo}
+              <span class="text-white">→</span>
             </a>`;
         });
 
         const contato = document.getElementById('contato-info');
         contato.innerHTML = `
-          <div class="mb-3">
-            <label class="text-primary mono d-block">EMAIL</label>
-            <a href="mailto:${dados.contato.email}" class="text-white text-decoration-none">${dados.contato.email}</a>
-          </div>
-          <div class="mb-0">
-            <label class="text-primary mono d-block">NETWORKS</label>
-            <a href="${dados.contato.linkedin}" target="_blank" class="text-white small d-block mb-1">LinkedIn</a>
-            <a href="${dados.contato.github}" target="_blank" class="text-white small d-block">GitHub</a>
-          </div>
+          <a href="mailto:${dados.contato.email}" class="btn-white">email</a>
+          <a href="${dados.contato.linkedin}" target="_blank" class="btn btn-outline-light rounded-pill px-4">linkedin</a>
+          <a href="${dados.contato.github}" target="_blank" class="btn btn-outline-light rounded-pill px-4">github</a>
         `;
       });
   </script>
