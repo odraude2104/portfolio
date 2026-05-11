@@ -3,132 +3,165 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Eduardo Arraes | Portfolio</title>
+  <title>Eduardo Arraes | Terminal</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Google Fonts para um ar mais profissional -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      scroll-behavior: smooth;
+      --bg-dark: #0a0c10;
+      --sidebar-bg: #111418;
+      --accent: #00d4ff;
+      --card-bg: #161b22;
     }
+
     body {
+      background-color: var(--bg-dark);
+      color: #c9d1d9;
       font-family: 'Inter', sans-serif;
-      padding-top: 70px;
+      overflow-x: hidden;
     }
-    /* Estilo Glassmorphism para Cards */
-    .custom-card {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      transition: transform 0.3s ease, border-color 0.3s ease;
+
+    code, .mono { font-family: 'Fira Code', monospace; }
+
+    /* Sidebar Customizada */
+    .sidebar {
+      background-color: var(--sidebar-bg);
+      border-right: 1px solid #30363d;
+      min-height: 100vh;
+      position: fixed;
+      width: 280px;
+      z-index: 1000;
     }
-    .custom-card:hover {
-      transform: translateY(-5px);
-      border-color: #0d6efd;
+
+    .nav-pills .nav-link {
+      color: #8b949e;
+      border-radius: 8px;
+      margin-bottom: 5px;
+      transition: 0.3s;
     }
-    .hero-section {
-      padding: 100px 0;
-      background: radial-gradient(circle at top right, #1e293b, #0f172a);
+
+    .nav-pills .nav-link.active, .nav-pills .nav-link:hover {
+      background-color: rgba(0, 212, 255, 0.1) !important;
+      color: var(--accent) !important;
     }
-    .section-title {
-      border-left: 4px solid #0d6efd;
-      padding-left: 15px;
-      margin-bottom: 30px;
+
+    /* Conteúdo Principal */
+    .main-content {
+      margin-left: 280px;
+      padding: 40px;
     }
-    .nav-link {
-      font-weight: 500;
-      transition: color 0.2s;
+
+    .glass-card {
+      background: var(--card-bg);
+      border: 1px solid #30363d;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     }
-    .nav-link:hover {
-      color: #0d6efd !important;
+
+    .badge-skill {
+      background: #21262d;
+      color: var(--accent);
+      border: 1px solid rgba(0, 212, 255, 0.3);
+      padding: 8px 15px;
+      font-size: 0.85rem;
+    }
+
+    .project-card {
+      transition: all 0.3s ease;
+      height: 100%;
+      border-left: 4px solid transparent;
+    }
+
+    .project-card:hover {
+      border-left: 4px solid var(--accent);
+      background: #1c2128;
+    }
+
+    /* Ajustes Mobile */
+    @media (max-width: 992px) {
+      .sidebar { width: 100%; min-height: auto; position: relative; border-right: none; border-bottom: 1px solid #30363d; }
+      .main-content { margin-left: 0; padding: 20px; }
     }
   </style>
 </head>
-<body data-bs-theme="dark" class="bg-dark text-light">
+<body data-bs-theme="dark">
 
-  <!-- Navbar Otimizada -->
-  <nav class="navbar navbar-expand-lg bg-dark border-bottom border-secondary fixed-top shadow-sm">
-    <div class="container">
-      <a class="navbar-brand text-light fw-bold" href="#">
-        <span class="text-primary fw-black">&lt;</span><span id="nome"></span><span class="text-primary">/&gt;</span>
-      </a>
-      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto align-items-center">
-          <li class="nav-item"><a class="nav-link text-light mx-2" href="#home">Home</a></li>
-          <li class="nav-item"><a class="nav-link text-light mx-2" href="#sobre">Sobre</a></li>
-          <li class="nav-item"><a class="nav-link text-light mx-2" href="#habilidades">Habilidades</a></li>
-          <li class="nav-item"><a class="nav-link text-light mx-2" href="#projetos">Projetos</a></li>
-          <li class="nav-item"><a class="nav-link text-light mx-2" href="#blog">Blog</a></li>
-          <li class="nav-item ms-lg-3">
-            <a class="btn btn-outline-primary rounded-pill px-4" href="#contato">Contato</a>
-          </li>
-        </ul>
-      </div>
+  <!-- Sidebar -->
+  <aside class="sidebar p-4 collapse d-lg-block" id="sidebarMenu">
+    <div class="mb-5 text-center">
+      <h4 class="fw-bold mb-0 text-white mono" id="nome"></h4>
+      <small class="text-primary mono">SysAdmin & DevOps</small>
     </div>
-  </nav>
+    
+    <nav class="nav flex-column nav-pills">
+      <a class="nav-link active" href="#home">/home</a>
+      <a class="nav-link" href="#sobre">/sobre</a>
+      <a class="nav-link" href="#habilidades">/habilidades</a>
+      <a class="nav-link" href="#projetos">/projetos</a>
+      <a class="nav-link" href="#blog">/blog</a>
+      <a class="nav-link mt-4 btn btn-outline-primary" href="#contato">Falar Comigo</a>
+    </nav>
+  </aside>
 
-  <main>
-    <!-- Hero Section -->
-    <section id="home" class="hero-section text-center mb-5">
-      <div class="container">
-        <h1 class="display-3 fw-bold mb-3">Soluções em <span class="text-primary">Infraestrutura & TI</span></h1>
-        <p class="lead text-secondary mx-auto" style="max-width: 700px;">
-          Especialista em servidores Windows, automação de fluxos e arquitetura de sistemas modernos.
-        </p>
-        <div class="mt-4">
-          <a href="#projetos" class="btn btn-primary btn-lg px-5 rounded-pill me-2">Ver Projetos</a>
-          <a href="#sobre" class="btn btn-outline-light btn-lg px-5 rounded-pill">Sobre Mim</a>
-        </div>
+  <!-- Botão Mobile -->
+  <button class="btn btn-dark d-lg-none fixed-top m-2 border-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu">
+    ☰ Menu
+  </button>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    
+    <!-- Hero / Home -->
+    <section id="home" class="mb-5">
+      <div class="glass-card">
+        <span class="mono text-primary mb-2 d-block">> Initializing system...</span>
+        <h1 class="display-4 fw-black text-white mb-4">Especialista em <br> <span style="color: var(--accent)">Infraestrutura Crítica.</span></h1>
+        <p class="lead text-secondary">Focado em alta disponibilidade, segurança de endpoints e automação inteligente.</p>
       </div>
     </section>
 
-    <div class="container">
-      <!-- Sobre -->
-      <section id="sobre" class="mb-5 py-5">
-        <h2 class="section-title">Sobre Mim</h2>
-        <div class="p-4 rounded-4 bg-secondary bg-opacity-10 border border-secondary border-opacity-25">
-           <p id="sobre-texto" class="lead mb-0"></p>
-        </div>
-      </section>
+    <!-- Sobre -->
+    <section id="sobre" class="mb-5">
+      <h3 class="mono mb-4 text-white"># sobre_mim</h3>
+      <div class="glass-card">
+        <p id="sobre-texto" class="fs-5 lh-lg mb-0"></p>
+      </div>
+    </section>
 
-      <!-- Habilidades -->
-      <section id="habilidades" class="mb-5 py-5">
-        <h2 class="section-title">Habilidades Técnicas</h2>
-        <div id="lista-habilidades" class="d-flex flex-wrap gap-2"></div>
-      </section>
+    <!-- Habilidades -->
+    <section id="habilidades" class="mb-5">
+      <h3 class="mono mb-4 text-white"># tech_stack</h3>
+      <div id="lista-habilidades" class="d-flex flex-wrap gap-2"></div>
+    </section>
 
-      <!-- Projetos -->
-      <section id="projetos" class="mb-5 py-5">
-        <h2 class="section-title">Projetos em Destaque</h2>
-        <div id="lista-projetos" class="row g-4"></div>
-      </section>
+    <!-- Projetos -->
+    <section id="projetos" class="mb-5">
+      <h3 class="mono mb-4 text-white"># repositorios</h3>
+      <div id="lista-projetos" class="row g-4"></div>
+    </section>
 
-      <!-- Blog e Contato (Grid 2 colunas) -->
-      <div class="row py-5">
-        <section id="blog" class="col-lg-6 mb-5">
-          <h2 class="section-title">Últimos Posts</h2>
-          <div class="list-group list-group-flush border-0" id="lista-blog"></div>
+    <!-- Blog e Contato -->
+    <div class="row g-4">
+      <div class="col-md-7">
+        <section id="blog">
+          <h3 class="mono mb-4 text-white"># logs_recente</h3>
+          <div id="lista-blog" class="glass-card p-0 overflow-hidden"></div>
         </section>
-
-        <section id="contato" class="col-lg-6 mb-5">
-          <h2 class="section-title">Vamos Conversar?</h2>
-          <div class="p-4 rounded-4 bg-primary bg-opacity-10 border border-primary border-opacity-25">
-            <ul id="contato-info" class="list-unstyled mb-0"></ul>
-          </div>
+      </div>
+      <div class="col-md-5">
+        <section id="contato">
+          <h3 class="mono mb-4 text-white"># connect</h3>
+          <div class="glass-card" id="contato-info"></div>
         </section>
       </div>
     </div>
+
+    <footer class="mt-5 pt-5 text-center text-secondary border-top border-secondary">
+      <p class="small mono">&copy; 2026.root@<span id="nome-footer"></span> ~ system_up</p>
+    </footer>
   </main>
 
-  <footer class="bg-black text-center text-secondary py-5 border-top border-secondary">
-    <div class="container">
-      <p class="mb-0">&copy; 2026 <span id="nome-footer" class="text-light"></span>. Desenvolvido com PHP & Bootstrap.</p>
-    </div>
-  </footer>
-
-  <!-- JS Melhorado -->
   <script>
     fetch('dados.json')
       .then(response => response.json())
@@ -137,48 +170,44 @@
         document.getElementById('nome-footer').textContent = dados.nome;
         document.getElementById('sobre-texto').textContent = dados.sobre;
 
-        // Habilidades com estilo de Pill
-        const habilidades = document.getElementById('lista-habilidades');
-        dados.habilidades.forEach(hab => {
-          habilidades.innerHTML += `<span class="badge rounded-pill bg-primary bg-opacity-10 text-primary border border-primary border-opacity-25 px-3 py-2">${hab}</span>`;
+        const hab = document.getElementById('lista-habilidades');
+        dados.habilidades.forEach(h => {
+          hab.innerHTML += `<span class="badge badge-skill rounded-0">${h}</span>`;
         });
 
-        // Projetos com Card Customizado
-        const projetos = document.getElementById('lista-projetos');
-        dados.projetos.forEach(proj => {
-          projetos.innerHTML += `
+        const proj = document.getElementById('lista-projetos');
+        dados.projetos.forEach(p => {
+          proj.innerHTML += `
             <div class="col-md-6">
-              <div class="card h-100 custom-card text-light">
-                <div class="card-body p-4">
-                  <h5 class="card-title fw-bold">${proj.titulo}</h5>
-                  <p class="card-text text-secondary">${proj.descricao}</p>
-                  <a href="${proj.link}" class="btn btn-link text-primary p-0 text-decoration-none fw-bold" target="_blank">Explorar Projeto &rarr;</a>
-                </div>
+              <div class="glass-card project-card">
+                <h5 class="mono text-white mb-3">${p.titulo}</h5>
+                <p class="small text-secondary mb-4">${p.descricao}</p>
+                <a href="${p.link}" class="btn btn-sm btn-outline-secondary mono" target="_blank">view_source</a>
               </div>
             </div>`;
         });
 
-        // Blog com Estilo de Lista
         const blog = document.getElementById('lista-blog');
         dados.blog.forEach(post => {
           blog.innerHTML += `
-            <a href="${post.link}" class="list-group-item list-group-item-action bg-transparent text-light border-0 px-0" target="_blank">
-              <div class="d-flex w-100 justify-content-between">
-                <h6 class="mb-1">${post.titulo}</h6>
-                <small class="text-primary">Ler →</small>
-              </div>
+            <a href="${post.link}" class="d-block p-3 text-decoration-none border-bottom border-secondary text-secondary hover-bg-dark">
+              <span class="text-primary mono">-></span> ${post.titulo}
             </a>`;
         });
 
-        // Contato
         const contato = document.getElementById('contato-info');
         contato.innerHTML = `
-          <li class="mb-3"><strong>Email:</strong> <br><a href="mailto:${dados.contato.email}" class="text-light text-decoration-none">${dados.contato.email}</a></li>
-          <li class="mb-3"><strong>GitHub:</strong> <br><a href="${dados.contato.github}" target="_blank" class="text-light text-decoration-none">${dados.contato.github.replace('https://', '')}</a></li>
-          <li><strong>LinkedIn:</strong> <br><a href="${dados.contato.linkedin}" target="_blank" class="text-light text-decoration-none">Ver perfil profissional</a></li>
+          <div class="mb-3">
+            <label class="text-primary mono d-block">EMAIL</label>
+            <a href="mailto:${dados.contato.email}" class="text-white text-decoration-none">${dados.contato.email}</a>
+          </div>
+          <div class="mb-0">
+            <label class="text-primary mono d-block">NETWORKS</label>
+            <a href="${dados.contato.linkedin}" target="_blank" class="text-white small d-block mb-1">LinkedIn</a>
+            <a href="${dados.contato.github}" target="_blank" class="text-white small d-block">GitHub</a>
+          </div>
         `;
-      })
-      .catch(error => console.error('Erro ao carregar os dados:', error));
+      });
   </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
