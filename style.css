@@ -1,60 +1,63 @@
-/* Reset básico */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background: #f4f4f4;
-    color: #333;
-    padding: 20px;
-  }
-  
-  header {
-    background: #333;
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
-  }
-  
-  header h1 {
-    margin-bottom: 10px;
-  }
-  
-  nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-  }
-  
-  nav a {
-    color: #fff;
-    text-decoration: none;
-  }
-  
-  section {
-    margin: 40px 0;
-    padding: 20px;
-    background: #fff;
-    border-radius: 8px;
-  }
-  
-  h2 {
-    margin-bottom: 15px;
-    color: #444;
-  }
-  
-  .projeto {
-    margin-bottom: 20px;
-  }
-  
-  footer {
-    text-align: center;
-    margin-top: 40px;
-    color: #777;
-  }
-  
+body {
+      background-color: #000000;
+      color: #ffffff;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      padding-top: 80px;
+    }
+
+    /* Navbar Minimalista */
+    .navbar {
+      background-color: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(10px);
+    }
+
+    /* Botão Branco Redondo */
+    .btn-white {
+      background-color: #ffffff;
+      color: #000000;
+      border-radius: 50px;
+      padding: 10px 25px;
+      font-weight: 700;
+      border: none;
+      transition: transform 0.2s ease;
+    }
+    .btn-white:hover {
+      background-color: #e2e2e2;
+      transform: scale(1.05);
+    }
+
+    /* Cards e Seções */
+    .section-card {
+      background-color: #111111;
+      border-radius: 30px;
+      padding: 40px;
+      margin-bottom: 30px;
+      border: 1px solid #222222;
+    }
+
+    .badge-pill {
+      background-color: #ffffff;
+      color: #000000;
+      border-radius: 50px;
+      padding: 8px 20px;
+      font-weight: 600;
+      text-transform: lowercase;
+      margin: 5px;
+      display: inline-block;
+    }
+
+    h1, h2 {
+      font-weight: 700;
+      letter-spacing: -1px;
+    }
+
+    .nav-link {
+      color: #888888 !important;
+      font-weight: 500;
+    }
+    .nav-link:hover {
+      color: #ffffff !important;
+    }
+
+    /* Remover decorações de links */
+    a { text-decoration: none; }
