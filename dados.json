@@ -1,7 +1,7 @@
 {
   "nome": "Eduardo",
-  "sobre": "Sou um analista de Infraestrutua de TI apaixonado por criar soluções práticas e eficientes.",
-  "habilidades": ["HTML", "CSS", "JavaScript", "Bootstrap", "Git", "Zabbix", "Grafana", "Docker", "Container", "Portainer", "Virtualização", "Hyper-V", "Servidores", "Windows", "Windows Server", "Windows 10", "Windows 11", "DevOps", "Cibersegurança", "PHP", "MySQL", "Banco de Dados", "Modelagem de Dados"],
+  "sobre": "Analista de Infraestrutura de TI com 15 anos de experiência em suporte, infraestrutura, monitoramento, automação e segurança da informação. Graduado em Gestão em TI, cursando Cibersegurança e com experiência em tecnologias como Zabbix, Grafana, Docker, Linux, Windows Server, PowerShell, Fortigate e DevOps. Apaixonado por criar soluções práticas, eficientes e seguras para ambientes corporativos.",
+  "habilidades": ["HTML5", "CSS3", "JavaScript", "Bootstrap", "Git", "GitHub", "Zabbix", "Grafana", "Docker", "Docker Compose", "Containers", "Portainer", "Virtualização", "Hyper-V", "VMware", "Infraestrutura de TI", "Administração de Servidores", "Windows", "Windows Server", "Windows 10", "Windows 11", "Linux", "Redes de Computadores", "DevOps", "Cibersegurança", "Segurança da Informação", "PHP", "MySQL", "SQL", "Banco de Dados", "Modelagem de Dados", "Automação de Processos", "Automação de Infraestrutura", "n8n", "Integração de Sistemas", "Inteligência Artificial", "IA Generativa", "LLMs", "MCP", "Webhooks", "APIs REST", "Observabilidade", "Monitoramento de Infraestrutura", "CI/CD", "PowerShell", "Troubleshooting", "Suporte Técnico", "Cloud Computing", "Arquitetura de Sistemas", "Desenvolvimento Web", "Análise de Sistemas"],
   "servicos": [
     { "titulo": "Desenvolvimento Web", "descricao": "Sites modernos e responsivos." },
     { "titulo": "Manutenção", "descricao": "Ajustes, correções e melhorias." }
@@ -12,8 +12,8 @@
   ],
   "contato": {
     "email": "eduardo.arraes@outlook.com",
-    "github": "https://github.com/seuusuario",
-    "linkedin": "https://linkedin.com/in/seuusuario"
+    "github": "https://github.com/odraude2104",
+    "linkedin": "https://linkedin.com/in/eduardoarraes1"
   },
   "blog": [
     { "titulo": "Como aprendi JavaScript", "link": "#" },
