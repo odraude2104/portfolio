@@ -76,3 +76,19 @@ body {
     border-color:rgba(255,255,255,.18);
     box-shadow:0 20px 60px rgba(0,0,0,.35);
 }
+
+.section-card{
+
+    transition:.3s;
+
+}
+
+.section-card:hover{
+
+    transform:translateY(-6px);
+
+    border-color:#ffffff33;
+
+    box-shadow:0 20px 40px rgba(0,0,0,.35);
+
+}
