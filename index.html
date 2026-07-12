@@ -10,14 +10,49 @@
 </head>
 <body>
 
-  <!-- Navegação -->
-  <nav class="fixed top-0 w-full z-20">
-    <div class="mx-auto px-4 max-w-3xl flex items-center">
-      <a class="text-white font-bold text-xl" href="#" id="nome"></a>
-      <div class="ml-auto">
-        <a class="btn-white shadow-sm inline-block" href="#contato">contato</a>
+  <nav class="fixed top-0 left-0 w-full z-50">
+      <div class="max-w-6xl mx-auto px-6 py-4">
+          <div
+              class="flex items-center justify-between rounded-2xl border border-white/10 bg-black/40 backdrop-blur-xl px-6 py-3 shadow-2xl">
+              <!-- Logo -->
+              <a href="#home"
+                  id="nome"
+                  class="text-xl font-bold tracking-wide text-white transition hover:text-gray-300">
+              </a>
+              <!-- Menu -->
+              <ul class="hidden md:flex items-center gap-8 text-sm font-medium">
+                  <li>
+                      <a href="#sobre"
+                          class="text-gray-400 hover:text-white transition duration-300">
+                          Sobre
+                      </a>
+                  </li>
+                  <li>
+                      <a href="#habilidades"
+                          class="text-gray-400 hover:text-white transition duration-300">
+                          Habilidades
+                      </a>
+                  </li>
+                  <li>
+                      <a href="#projetos"
+                          class="text-gray-400 hover:text-white transition duration-300">
+                          Projetos
+                      </a>
+                  </li>
+                  <li>
+                      <a href="#blog"
+                          class="text-gray-400 hover:text-white transition duration-300">
+                          Blog
+                      </a>
+                  </li>
+              </ul>
+              <!-- Botão -->
+              <a href="#contato"
+                  class="rounded-full border border-white/20 bg-white px-5 py-2 text-sm font-semibold text-black transition-all duration-300 hover:scale-105 hover:bg-gray-200">
+                  Vamos conversar
+              </a>
+          </div>
       </div>
-    </div>
   </nav>
 
   <main class="mx-auto mt-24 px-4" style="max-width: 850px;">
