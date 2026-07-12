@@ -1,17 +1,113 @@
 {
-  "nome": "Eduardo",
-  "titulo": "Criando experiências através do design e código.",
-  "resumo": "Analista de TI e desenvolvedor focado em simplicidade e eficiência.",
-  "sobre": "Analista de Infraestrutura de TI com 15 anos de experiência em suporte, infraestrutura, monitoramento, automação e segurança da informação. Graduado em Gestão em TI, cursando Cibersegurança e com experiência em tecnologias como Zabbix, Grafana, Docker, Linux, Windows Server, PowerShell, Fortigate e DevOps. Apaixonado por criar soluções práticas, eficientes e seguras para ambientes corporativos.",
-  "habilidades": ["HTML5", "CSS3", "JavaScript", "Bootstrap", "Git", "GitHub", "Zabbix", "Grafana", "Docker", "Docker Compose", "Containers", "Portainer", "Virtualização", "Hyper-V", "VMware", "Infraestrutura de TI", "Administração de Servidores", "Windows", "Windows Server", "Windows 10", "Windows 11", "Linux", "Redes de Computadores", "DevOps", "Cibersegurança", "Segurança da Informação", "PHP", "MySQL", "SQL", "Banco de Dados", "Modelagem de Dados", "Automação de Processos", "Automação de Infraestrutura", "n8n", "Integração de Sistemas", "Inteligência Artificial", "IA Generativa", "LLMs", "MCP", "Webhooks", "APIs REST", "Observabilidade", "Monitoramento de Infraestrutura", "CI/CD", "PowerShell", "Troubleshooting", "Suporte Técnico", "Cloud Computing", "Arquitetura de Sistemas", "Desenvolvimento Web", "Análise de Sistemas"],
+  "nome": "Eduardo Arraes",
+  "titulo": "Projetando infraestruturas resilientes, automatizadas e seguras.",
+  "resumo": "Analista de Infraestrutura de TI especializado em Cloud, Automação, Observabilidade e Segurança da Informação. Desenvolvo soluções escaláveis utilizando Microsoft 365, Docker, Linux, Windows Server, PowerShell, Grafana, Zabbix e DevOps para otimizar ambientes corporativos.",
+
+  "sobre": "Sou Analista de Infraestrutura de TI com mais de 15 anos de experiência em administração de ambientes Windows e Linux, monitoramento, virtualização, redes, automação de processos e segurança da informação. Atualmente atuo no planejamento e implementação de soluções voltadas para alta disponibilidade, observabilidade, containers, Microsoft 365, integrações, inteligência artificial e infraestrutura moderna. Meu objetivo é transformar ambientes complexos em plataformas eficientes, seguras e escaláveis, aplicando boas práticas de arquitetura, automação e governança de TI.",
+
+  "habilidades": [
+    "Microsoft 365",
+    "Microsoft Azure",
+    "Windows Server",
+    "Linux",
+    "Docker",
+    "Docker Compose",
+    "Portainer",
+    "PowerShell",
+    "Python",
+    "Zabbix",
+    "Grafana",
+    "Prometheus",
+    "Virtualização",
+    "Hyper-V",
+    "VMware",
+    "Fortinet",
+    "Redes",
+    "TCP/IP",
+    "VPN",
+    "Firewall",
+    "Segurança da Informação",
+    "Cibersegurança",
+    "Observabilidade",
+    "Monitoramento",
+    "DevOps",
+    "Git",
+    "GitHub",
+    "CI/CD",
+    "PostgreSQL",
+    "MySQL",
+    "APIs REST",
+    "Webhooks",
+    "Integração de Sistemas",
+    "n8n",
+    "Node.js",
+    "React",
+    "HTML5",
+    "CSS3",
+    "JavaScript",
+    "PHP",
+    "Cloud Computing",
+    "Arquitetura de Infraestrutura",
+    "Arquitetura de Sistemas",
+    "Automação",
+    "Containers",
+    "Backup",
+    "Alta Disponibilidade",
+    "Inteligência Artificial",
+    "LLMs",
+    "MCP"
+  ],
+
   "servicos": [
-    { "titulo": "Desenvolvimento Web", "descricao": "Sites modernos e responsivos." },
-    { "titulo": "Manutenção", "descricao": "Ajustes, correções e melhorias." }
+    {
+      "titulo": "Infraestrutura de TI",
+      "descricao": "Planejamento, implantação e administração de ambientes Windows, Linux e virtualização."
+    },
+    {
+      "titulo": "Cloud & Microsoft 365",
+      "descricao": "Implantação, administração e integração de serviços Microsoft e ambientes híbridos."
+    },
+    {
+      "titulo": "Automação",
+      "descricao": "Automação de processos utilizando PowerShell, Python, APIs, Webhooks e n8n."
+    },
+    {
+      "titulo": "Monitoramento",
+      "descricao": "Implantação de observabilidade com Zabbix, Grafana, Prometheus e dashboards executivos."
+    },
+    {
+      "titulo": "Containers",
+      "descricao": "Implantação e gerenciamento de aplicações utilizando Docker, Portainer e DevOps."
+    },
+    {
+      "titulo": "Segurança",
+      "descricao": "Boas práticas de segurança da informação, hardening, firewall e monitoramento de ameaças."
+    }
   ],
+
   "projetos": [
-    { "titulo": "Projeto 1", "descricao": "Breve descrição do projeto 1.", "link": "#" },
-    { "titulo": "Projeto 2", "descricao": "Breve descrição do projeto 2.", "link": "#" }
+    {
+      "titulo": "Central de Monitoramento",
+      "descricao": "Ambiente corporativo de observabilidade utilizando Zabbix, Grafana e dashboards executivos.",
+      "link": "#"
+    },
+    {
+      "titulo": "Infraestrutura Docker",
+      "descricao": "Plataforma de containers para aplicações corporativas utilizando Docker Compose e Portainer.",
+      "link": "#"
+    },
+    {
+      "titulo": "Portal de Governança Microsoft 365",
+      "descricao": "Dashboard para auditoria, licenciamento e gerenciamento do Microsoft 365 utilizando Microsoft Graph.",
+      "link": "#"
+    },
+    {
+      "titulo": "Sistema Multi-Tenant",
+      "descricao": "Desenvolvimento de plataforma SaaS escalável utilizando arquitetura multi-tenant.",
+      "link": "#"
+    }
   ],
+
   "contato": {
     "email": "eduardo.arraes@outlook.com",
     "github": "https://github.com/odraude2104",
@@ -19,8 +115,23 @@
     "medium": "https://medium.com/@eduardo.arraes",
     "youtube": "https://www.youtube.com/@odraude2104"
   },
+
   "blog": [
-    { "titulo": "Como aprendi JavaScript", "link": "#" },
-    { "titulo": "Dicas de produtividade para devs", "link": "#" }
+    {
+      "titulo": "Automatizando o Microsoft 365 com Microsoft Graph",
+      "link": "#"
+    },
+    {
+      "titulo": "Construindo uma plataforma de monitoramento com Zabbix e Grafana",
+      "link": "#"
+    },
+    {
+      "titulo": "Docker para ambientes corporativos: boas práticas",
+      "link": "#"
+    },
+    {
+      "titulo": "PowerShell para administração de infraestrutura",
+      "link": "#"
+    }
   ]
 }
