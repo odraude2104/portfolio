@@ -5,14 +5,14 @@ body {
       padding-top: 80px;
     }
 
-    /* Navbar Minimalista */
-    .navbar {
-      background-color: rgba(0, 0, 0, 0.8);
-      backdrop-filter: blur(10px);
-    }
+/* Navbar Minimalista */
+.navbar {
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+}
 
-    /* Botão Branco Redondo */
-    .btn-white {
+/* Botão Branco Redondo */
+.btn-white {
       background-color: #ffffff;
       color: #000000;
       border-radius: 50px;
@@ -20,11 +20,12 @@ body {
       font-weight: 700;
       border: none;
       transition: transform 0.2s ease;
-    }
-    .btn-white:hover {
-      background-color: #e2e2e2;
-      transform: scale(1.05);
-    }
+}
+
+.btn-white:hover {
+  background-color: #e2e2e2;
+  transform: scale(1.05);
+}
 
     /* Cards e Seções */
     .section-card {
@@ -61,3 +62,17 @@ body {
 
     /* Remover decorações de links */
     a { text-decoration: none; }
+
+.glass-card{
+    background:rgba(255,255,255,.04);
+    backdrop-filter:blur(20px);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:24px;
+    transition:.35s;
+}
+
+.glass-card:hover{
+    transform:translateY(-8px);
+    border-color:rgba(255,255,255,.18);
+    box-shadow:0 20px 60px rgba(0,0,0,.35);
+}
