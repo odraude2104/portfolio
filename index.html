@@ -157,50 +157,6 @@
 
   <!-- SCRIPT CORRIGIDO -->
   <script>
-
-    const gridHab = document.getElementById('grid-habilidades');
-
-// Mapeamento inteligente para organizar sua abundância de hard skills
-const categorias = {
-  "Cloud & Infraestrutura": [],
-  "Automação & AIOps (DevOps)": [],
-  "Segurança & Monitoramento": [],
-  "Outras Tecnologias": []
-};
-
-// Distribui suas skills automaticamente baseado em palavras-chave
-dados.habilidades.forEach(h => {
-  const nome = h.toLowerCase();
-  if (nome.includes('aws') || nome.includes('azure') || nome.includes('cloud') || nome.includes('linux') || nome.includes('server') || nome.includes('windows')) {
-    categorias["Cloud & Infraestrutura"].push(h);
-  } else if (nome.includes('n8n') || nome.includes('docker') || nome.includes('ci/cd') || nome.includes('git') || nome.includes('ansible') || nome.includes('terraform') || nome.includes('php') || nome.includes('mariadb')) {
-    categorias["Automação & AIOps (DevOps)"].push(h);
-  } else if (nome.includes('zabbix') || nome.includes('defender') || nome.includes('glpi') || nome.includes('segurança') || nome.includes('firewall') || nome.includes('intune')) {
-    categorias["Segurança & Monitoramento"].push(h);
-  } else {
-    categorias["Outras Tecnologias"].push(h);
-  }
-});
-
-// Renderiza os cards no estilo Bento Box
-Object.keys(categorias).forEach(cat => {
-  if (categorias[cat].length > 0) {
-    let tagsHTML = categorias[cat].map(h => `<span class="badge-pill">${h}</span>`).join('');
-    
-    gridHab.innerHTML += `
-      <div class="glass-card p-8 rounded-3xl border border-white/5 flex flex-col justify-between">
-        <div>
-          <h3 class="text-white text-xl font-bold mb-2 tracking-tight">${cat}</h3>
-          <div class="h-1 w-12 bg-blue-500/50 rounded-full mb-6"></div>
-        </div>
-        <div class="flex flex-wrap gap-2">
-          ${tagsHTML}
-        </div>
-      </div>
-    `;
-  }
-});
-
     fetch('dados.json')
       .then(response => response.json())
       .then(dados => {
@@ -266,6 +222,49 @@ Object.keys(categorias).forEach(cat => {
         navContainer.classList.add("bg-black/40");
       }
     });
+
+        const gridHab = document.getElementById('grid-habilidades');
+
+// Mapeamento inteligente para organizar sua abundância de hard skills
+const categorias = {
+  "Cloud & Infraestrutura": [],
+  "Automação & AIOps (DevOps)": [],
+  "Segurança & Monitoramento": [],
+  "Outras Tecnologias": []
+};
+
+// Distribui suas skills automaticamente baseado em palavras-chave
+dados.habilidades.forEach(h => {
+  const nome = h.toLowerCase();
+  if (nome.includes('aws') || nome.includes('azure') || nome.includes('cloud') || nome.includes('linux') || nome.includes('server') || nome.includes('windows')) {
+    categorias["Cloud & Infraestrutura"].push(h);
+  } else if (nome.includes('n8n') || nome.includes('docker') || nome.includes('ci/cd') || nome.includes('git') || nome.includes('ansible') || nome.includes('terraform') || nome.includes('php') || nome.includes('mariadb')) {
+    categorias["Automação & AIOps (DevOps)"].push(h);
+  } else if (nome.includes('zabbix') || nome.includes('defender') || nome.includes('glpi') || nome.includes('segurança') || nome.includes('firewall') || nome.includes('intune')) {
+    categorias["Segurança & Monitoramento"].push(h);
+  } else {
+    categorias["Outras Tecnologias"].push(h);
+  }
+});
+
+// Renderiza os cards no estilo Bento Box
+Object.keys(categorias).forEach(cat => {
+  if (categorias[cat].length > 0) {
+    let tagsHTML = categorias[cat].map(h => `<span class="badge-pill">${h}</span>`).join('');
+    
+    gridHab.innerHTML += `
+      <div class="glass-card p-8 rounded-3xl border border-white/5 flex flex-col justify-between">
+        <div>
+          <h3 class="text-white text-xl font-bold mb-2 tracking-tight">${cat}</h3>
+          <div class="h-1 w-12 bg-blue-500/50 rounded-full mb-6"></div>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          ${tagsHTML}
+        </div>
+      </div>
+    `;
+  }
+});
   </script>
 </body>
 </html>
