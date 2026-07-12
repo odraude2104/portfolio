@@ -238,22 +238,6 @@
 
     </section>
 
-<<<<<<< HEAD
-    <!-- HABILIDADES (BENTO GRID APPROACH) -->
-    <section id="habilidades" class="max-w-6xl mx-auto py-32 px-6">
-    <div class="mb-12">
-        <span class="text-blue-400 uppercase tracking-widest text-sm font-semibold">Expertise</span>
-        <h2 class="text-4xl md:text-5xl font-bold text-white mt-3">Hard Skills & Tecnologias</h2>
-        <p class="text-gray-400 mt-4 max-w-2xl">
-        Domínio técnico focado em alta disponibilidade, automação de processos (AIOps) e segurança defensiva de infraestrutura.
-        </p>
-    </div>
-
-    <!-- O JavaScript vai injetar os blocos categorizados aqui dentro -->
-    <div id="grid-habilidades" class="grid md:grid-cols-2 gap-6">
-        <!-- Os cards de categorias nascerão aqui -->
-    </div>
-=======
     <!-- HABILIDADES -->
 
     <section id="habilidades"
@@ -384,68 +368,6 @@
         `;
       });
 
-<<<<<<< HEAD
-    // Controle inteligente de scroll da Navbar
-    const nav = document.querySelector("nav");
-    const navContainer = document.getElementById("nav-container");
-    
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 20) {
-        nav.classList.remove("py-4");
-        nav.classList.add("py-2");
-        navContainer.classList.remove("bg-black/40");
-        navContainer.classList.add("bg-black/80", "shadow-black/50");
-      } else {
-        nav.classList.remove("py-2");
-        nav.classList.add("py-4");
-        navContainer.classList.remove("bg-black/80", "shadow-black/50");
-        navContainer.classList.add("bg-black/40");
-      }
-    });
-
-        const gridHab = document.getElementById('grid-habilidades');
-
-// Mapeamento inteligente para organizar sua abundância de hard skills
-const categorias = {
-  "Cloud & Infraestrutura": [],
-  "Automação & AIOps (DevOps)": [],
-  "Segurança & Monitoramento": [],
-  "Outras Tecnologias": []
-};
-
-// Distribui suas skills automaticamente baseado em palavras-chave
-dados.habilidades.forEach(h => {
-  const nome = h.toLowerCase();
-  if (nome.includes('aws') || nome.includes('azure') || nome.includes('cloud') || nome.includes('linux') || nome.includes('server') || nome.includes('windows')) {
-    categorias["Cloud & Infraestrutura"].push(h);
-  } else if (nome.includes('n8n') || nome.includes('docker') || nome.includes('ci/cd') || nome.includes('git') || nome.includes('ansible') || nome.includes('terraform') || nome.includes('php') || nome.includes('mariadb')) {
-    categorias["Automação & AIOps (DevOps)"].push(h);
-  } else if (nome.includes('zabbix') || nome.includes('defender') || nome.includes('glpi') || nome.includes('segurança') || nome.includes('firewall') || nome.includes('intune')) {
-    categorias["Segurança & Monitoramento"].push(h);
-  } else {
-    categorias["Outras Tecnologias"].push(h);
-  }
-});
-
-// Renderiza os cards no estilo Bento Box
-Object.keys(categorias).forEach(cat => {
-  if (categorias[cat].length > 0) {
-    let tagsHTML = categorias[cat].map(h => `<span class="badge-pill">${h}</span>`).join('');
-    
-    gridHab.innerHTML += `
-      <div class="glass-card p-8 rounded-3xl border border-white/5 flex flex-col justify-between">
-        <div>
-          <h3 class="text-white text-xl font-bold mb-2 tracking-tight">${cat}</h3>
-          <div class="h-1 w-12 bg-blue-500/50 rounded-full mb-6"></div>
-        </div>
-        <div class="flex flex-wrap gap-2">
-          ${tagsHTML}
-        </div>
-      </div>
-    `;
-  }
-});
-=======
       const nav = document.querySelector("nav");
       window.addEventListener("scroll", () => {
           if (window.scrollY > 40) {
@@ -459,7 +381,7 @@ Object.keys(categorias).forEach(cat => {
         document.querySelector("nav")
         .classList.toggle("bg-black/70", window.scrollY > 20);
       });
->>>>>>> parent of fde0818 (atualização html)
+      
   </script>
 
 </body>
