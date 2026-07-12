@@ -1,65 +1,103 @@
+/* ==========================================================================
+   VARIÁVEIS GLOBAIS (Fácil manutenção de cores e fontes)
+   ========================================================================== */
+:root {
+  --bg-primary: #050505;
+  --bg-card: #111111;
+  --text-main: #F5F5F5;
+  --text-muted: #8A8A8A;
+  --white: #ffffff;
+  --black: #000000;
+  --font-base: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* ==========================================================================
+   RESETS E CONFIGURAÇÕES GLOBAIS
+   ========================================================================== */
 body {
-      background-color:#050505;
-      color:#F5F5F5;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      padding-top: 80px;
-    }
-
-p{
-    color:#8A8A8A;
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  font-family: var(--font-base);
+  padding-top: 80px;
+  overflow-x: hidden; /* Evita scrolls laterais indesejados por efeitos */
 }
 
-h1,h2,h3{
-    color:white;
+a { 
+  text-decoration: none; 
 }
 
-body::before{
-    content:"";
-    position:fixed;
-    inset:0;
-    z-index:-40;
-    background-image:
-        linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),
-        linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);
-    background-size:40px 40px;
-    mask-image:radial-gradient(circle at center,black,transparent 90%);
-    pointer-events:none;
+p {
+  color: var(--text-muted);
 }
 
-body::after{
-    content:"";
-
-    position:fixed;
-
-    inset:0;
-
-    z-index:-30;
-
-    opacity:.025;
-
-    background-image:url("noise.png");
-
-    mix-blend-mode:soft-light;
-
-    pointer-events:none;
-
+h1, h2, h3 {
+  color: var(--white);
+  font-weight: 700;
+  letter-spacing: -1px;
 }
+
+/* ==========================================================================
+   EFEITOS DE BACKGROUND (Grid e Noise combinados)
+   ========================================================================== */
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* Efeito de Grade de Linhas */
+body::before {
+  z-index: -40;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, .03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, .03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: radial-gradient(circle at center, black, transparent 90%);
+  -webkit-mask-image: radial-gradient(circle at center, black, transparent 90%); /* Suporte Safari */
+}
+
+/* Efeito de Ruído/Textura */
+body::after {
+  z-index: -30;
+  opacity: .025;
+  background-image: url("noise.png");
+  mix-blend-mode: soft-light;
+}
+
+/* ==========================================================================
+   COMPONENTES
+   ========================================================================== */
 
 /* Navbar Minimalista */
 .navbar {
   background-color: rgba(0, 0, 0, 0.8);
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); /* Suporte Safari */
+}
+
+.nav-link {
+  color: #888888 !important;
+  font-weight: 500;
+  transition: color 0.2s ease; /* Transição suave na cor do link */
+}
+
+.nav-link:hover {
+  color: var(--white) !important;
 }
 
 /* Botão Branco Redondo */
 .btn-white {
-      background-color: #ffffff;
-      color: #000000;
-      border-radius: 50px;
-      padding: 10px 25px;
-      font-weight: 700;
-      border: none;
-      transition: transform 0.2s ease;
+  background-color: var(--white);
+  color: var(--black);
+  border-radius: 50px;
+  padding: 10px 25px;
+  font-weight: 700;
+  border: none;
+  /* 'will-change' previne borrões no texto do botão durante o scale */
+  will-change: transform; 
+  transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
 .btn-white:hover {
@@ -67,70 +105,48 @@ body::after{
   transform: scale(1.05);
 }
 
-    /* Cards e Seções */
-    .section-card {
-      background-color: #111111;
-      border-radius: 30px;
-      padding: 40px;
-      margin-bottom: 30px;
-      border: 1px solid #222222;
-    }
-
-    .badge-pill {
-      background-color: #ffffff;
-      color: #000000;
-      border-radius: 50px;
-      padding: 8px 20px;
-      font-weight: 600;
-      text-transform: lowercase;
-      margin: 5px;
-      display: inline-block;
-    }
-
-    h1, h2 {
-      font-weight: 700;
-      letter-spacing: -1px;
-    }
-
-    .nav-link {
-      color: #888888 !important;
-      font-weight: 500;
-    }
-    .nav-link:hover {
-      color: #ffffff !important;
-    }
-
-    /* Remover decorações de links */
-    a { text-decoration: none; }
-
-.glass-card{
-
-    background:rgba(255,255,255,.025);
-
-    border:1px solid rgba(255,255,255,.06);
-
-    backdrop-filter:blur(30px);
-
-    box-shadow:
-        inset 0 1px rgba(255,255,255,.03),
-        0 20px 80px rgba(0,0,0,.45);
-
+/* Badge Pill */
+.badge-pill {
+  background-color: var(--white);
+  color: var(--black);
+  border-radius: 50px;
+  padding: 8px 20px;
+  font-weight: 600;
+  text-transform: lowercase;
+  margin: 5px;
+  display: inline-block;
 }
 
-.glass-card:hover{
-
-    border-color:rgba(255,255,255,.12);
-
-    background:rgba(255,255,255,.04);
-
+/* Cards de Seção */
+.section-card {
+  background-color: var(--bg-card);
+  border-radius: 30px;
+  padding: 40px;
+  margin-bottom: 30px;
+  border: 1px solid #222222;
+  will-change: transform, box-shadow;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.section-card{
-    transition:.3s;
+.section-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, .35);
 }
 
-.section-card:hover{
-    transform:translateY(-6px);
-    border-color:#ffffff33;
-    box-shadow:0 20px 40px rgba(0,0,0,.35);
+/* Glassmorphism Card */
+.glass-card {
+  background: rgba(255, 255, 255, .025);
+  border: 1px solid rgba(255, 255, 255, .06);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px); /* Suporte Safari */
+  box-shadow:
+    inset 0 1px rgba(255, 255, 255, .03),
+    0 20px 80px rgba(0, 0, 0, .45);
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.glass-card:hover {
+  border-color: rgba(255, 255, 255, .12);
+  background: rgba(255, 255, 255, .04);
 }
