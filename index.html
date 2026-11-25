@@ -48,7 +48,7 @@
     <!-- HERO -->
     <section id="home" class="min-h-screen flex flex-col items-center justify-center text-center px-6 pt-20">
       <span class="mb-5 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-gray-300">
-        👋 Analista de Infraestrutura • Cloud • Segurança
+        👋 Analista de Infraestrutura • Segurança • DevOps
       </span>
       <h1 id="titulo-texto" class="max-w-5xl text-5xl md:text-7xl font-black leading-tight tracking-tight text-white"></h1>
       <p id="resumo-texto" class="mt-8 max-w-3xl text-xl text-gray-400 leading-relaxed"></p>
@@ -218,10 +218,10 @@
         // Informações de Contato
         const contato = document.getElementById('contato-info');
         contato.innerHTML = `
-          <a href="mailto:${dados.contato.email}" class="btn-white">email</a>
+          <a href="${dados.contato.whatsapp}" class="btn-white">WhatsApp</a>
+          <a href="mailto:${dados.contato.email}" class="rounded-full px-5 py-2.5 border border-white/20 text-white text-sm font-medium transition hover:bg-white/10">E-mail</a>
           <a href="${dados.contato.linkedin}" target="_blank" class="rounded-full px-5 py-2.5 border border-white/20 text-white text-sm font-medium transition hover:bg-white/10">linkedin</a>
           <a href="${dados.contato.github}" target="_blank" class="rounded-full px-5 py-2.5 border border-white/20 text-white text-sm font-medium transition hover:bg-white/10">github</a>
-          <a href="${dados.contato.medium}" target="_blank" class="rounded-full px-5 py-2.5 border border-white/20 text-white text-sm font-medium transition hover:bg-white/10">medium</a>
           <a href="${dados.contato.youtube}" target="_blank" class="rounded-full px-5 py-2.5 border border-white/20 text-white text-sm font-medium transition hover:bg-white/10">youtube</a>
         `;
       })
